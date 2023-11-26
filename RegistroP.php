@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once ('databaseP.php');
 
 $nombre = '';
@@ -17,7 +18,7 @@ $tel = '';
 
 $idc = 0;
 $idci = 0;
-$sql1 = 'select max(id_cliente) AS id_Cliente from cliente';
+$sql1 = "SELECT MAX(id_cliente) AS id_Cliente FROM Cliente;";
 $stmt = $conn->prepare($sql1);
 $stmt->execute();
 $results = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -38,14 +39,14 @@ if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
 	$numcasa=$_POST['numCasa_C'];
 	$cp=$_POST['CP_C'];
 	$tel=$_POST['telefono_C'];
-	$sql = "Insert into Cliente (id_cliente, nombre_C, apellidos_C, correo_C, contra_C, edad_C, sexo_C, pais_C, estado_C, calle_C, colonia_C, numCasa_C, CP_C, telefono_C) values ($idci, '$nombre', '$apellido', '$correo', '$contra', $edad, '$sexo', '$pais', '$estado', '$calle', '$colonia', '$numcasa', '$cp', '$tel')";
+	$sql = "IINSERT INTO Cliente (id_cliente, nombre_C, apellidos_C, correo_C, contra_C, edad_C, sexo_C, pais_C, estado_C, calle_C, colonia_C, numCasa_C, CP_C, telefono_C) VALUES ($idci, '$nombre', '$apellido', '$correo', '$contra', $edad, '$sexo', '$pais', '$estado', '$calle', '$colonia', '$numcasa', '$cp', '$tel');";
 	$stmt2 = $conn->prepare($sql);
 	
 	if($_POST['contra_C']==$_POST['confirmPass']){
 		if ($stmt2->execute()) {
 			echo "<script>
 				alert('Usuario Creado Exitosamente');
-				window.location= 'LoginP.php';
+				window.location='/LoginP.php';
 			</script>";
 		} else {
 			echo "<script>javascript:alert('Error de creación, intentelo de nuevo.');</script>";

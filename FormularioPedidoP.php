@@ -80,7 +80,7 @@ if (isset($_SESSION['user_id'])) {
 		if ($stmt4->execute()) {
 			echo "<script>
 				alert('Pedido Realizado');
-				window.location= 'CatalogoP.php'
+				window.location= '/CatalogoP.php'
 			</script>";
 		} else {
 			echo "<script>javascript:alert('Error de creación, intentelo de nuevo.');</script>";

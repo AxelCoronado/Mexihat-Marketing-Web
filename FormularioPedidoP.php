@@ -76,7 +76,7 @@ if (isset($_SESSION['user_id'])) {
 	
 		$cantidad=$_POST['cantidadPro_P'];
 		$envio=$_POST['envio'];
-		$sql4 = "Insert into Pedido (id_pedido, id_clienteP, id_modeloP, fecha_P, cantidadPro_P, total, alcance_P) values ($idpi, '$id', '$mod', '$fecha', '$cantidad', '$total', '$envio')";
+		$sql4 = "INSERT INTO Pedido (id_pedido, id_clienteP, id_modeloP, fecha_P, cantidadPro_P, total, alcance_P) VALUES ($idpi, '$id', '$mod', '$fecha', '$cantidad', '$total', '$envio')";
 		$stmt4 = $conn->prepare($sql4);
 		if ($stmt4->execute()) {
 			echo "<script>
@@ -102,7 +102,7 @@ if (isset($_SESSION['user_id'])) {
 		<div class="login-box">
 			<img class="avatar" src="img/logos/pedido.jpg" alt="">
 			<h1>Mi pedido</h1>
-			<form action = "FormularioPedidoP.php" method="POST">
+			<form action = "FormularioPedidoP.php">
 				<!--USERNAME-->
 				<label for="username">Nombre</label>
 				<input type="text" value="<?php echo $nombre." ".$apellido; ?>" placeholder="Ingrese su nombre">

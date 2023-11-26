@@ -3,7 +3,7 @@ session_start();
 require 'databaseP.php';
 
 if(isset($_SESSION['user_id'])){
-	header("Location: /Proyecto php/UsuarioP.php");
+	header("Location: /UsuarioP.php");
 }
 
 if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
@@ -17,7 +17,7 @@ if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
 	if ($results != null) {
 		if ($_POST['contra_C'] == $results['contra_C']) {
 			$_SESSION['user_id'] = $results['id_cliente'];
-			header("Location: /Proyecto php/UsuarioP.php");
+			header("Location: /UsuarioP.php");
 		} else {
 			echo "<script>javascript:alert('Contraseña incorrecta');</script>";
 		}

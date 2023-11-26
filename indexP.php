@@ -26,7 +26,6 @@
         <div class="container container--flex">
         <div class="logo-container column column--50">
             <h1 class="logo">MexiHat</h1>
-			<a href='logoutP.php'> Mexihat </a> 
         </div>
         <div class="main-header__contactInfo column column--50">
             <p class="main-header__contactInfo__phone">
@@ -197,21 +196,6 @@
     </ul> <br>
    </div>
   </div>
-        <!--<center><div class="login-box">
-        <h1>Comentarios</h1>
-            <form>
-                <label for="username">Nombre:</label>
-                <input type="text" placeholder="Ejem. Juan Perez">
-              
-                <label for="correo">Correo:</label>
-                <input type="text" placeholder="Ejem juan.Perez@gmail.com">
-              
-                <label for="Comentarios">Comentario:</label>
-                <input type="text" placeholder="Ingrese comentario">
-           
-                <input type="submit" value="Publicar">
-            </form>
-        </div></center>-->
         </div> 
     </section>
     </main>
@@ -224,7 +208,7 @@
             <div class="column column--33">
                 <h2 class="column__title">Contactanos</h2>   
                 <p class="column__txt">Telefono: 477 592 86 46</p>    
-                <p class="column__txt">argoteana3@gmail.com</p>    
+                <p class="column__txt">mexihatleon@gmail.com</p>    
             </div>
             <div class="column column--33">
                 <h2 class="column__title">Siguenos en nuestras redes sociales</h2>

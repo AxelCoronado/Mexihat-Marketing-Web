@@ -1,6 +1,6 @@
 <?php
 session_start();
-require ('/databaseP.php');
+require_once ('databaseP.php');
 
 $mod = '';
 if(!empty($_GET['vari'])){
@@ -31,8 +31,8 @@ $total=0;
 
 if (isset($_SESSION['user_id'])) {
 	$id = $_SESSION['user_id'];
-	$query = "SELECT * FROM Cliente WHERE id_cliente='$id'";
-	$query2 = "SELECT * FROM Modelo WHERE id_modelo = '$mod'";
+	$query = "SELECT * FROM Cliente WHERE id_cliente='$id';";
+	$query2 = "SELECT * FROM Modelo WHERE id_modelo = '$mod';";
 	$stmt = $conn->prepare($query);
 	$stmt2 = $conn->prepare($query2);
 	$stmt->execute();
@@ -76,7 +76,7 @@ if (isset($_SESSION['user_id'])) {
 	
 		$cantidad=$_POST['cantidadPro_P'];
 		$envio=$_POST['envio'];
-		$sql4 = "Insert into Pedido (id_pedido, id_clienteP, id_modeloP, fecha_P, cantidadPro_P, total, alcance_P) values ($idpi, '$id', '$mod', '$fecha', '$cantidad', '$total', '$envio')";
+		$sql4 = "Insert into Pedido (id_pedido, id_clienteP, id_modeloP, fecha_P, cantidadPro_P, total, alcance_P) values ($idpi, '$id', '$mod', '$fecha', '$cantidad', '$total', '$envio');";
 		$stmt4 = $conn->prepare($sql4);
 		if ($stmt4->execute()) {
 			echo "<script>

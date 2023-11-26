@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "databaseP.php";
+require_once 'databaseP.php';
 
 $nombre = '';
 $apellido = '';
@@ -18,7 +18,7 @@ $tel = '';
 
 $idc = 0;
 $idci = 0;
-$sql1 = "SELECT MAX(id_cliente) FROM Cliente;";
+$sql1 = "SELECT MAX(id_cliente) FROM Cliente";
 $stmt = $conn->prepare($sql1);
 $stmt->execute();
 $results = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -46,7 +46,6 @@ if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
 		if ($stmt2->execute()) {
 			echo "<script>
 				alert('Usuario Creado Exitosamente');
-				window.location='LoginP.php';
 			</script>";
 		} else {
 			echo "<script>javascript:alert('Error de creación, intentelo de nuevo.');</script>";
@@ -69,7 +68,7 @@ if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
 		<div class="login-box">
 			<img class="avatar" src="img/logos/logologin.png" alt="">
 			<h1>Registrarse ahora</h1>
-			<form action="RegistroP.php" method="POST">
+			<form action="RegistroP.php">
 				<!--USERNAME-->
 				<label for="username">Nombre de Usuario</label>
 				<input name="nombre_C" type="text" placeholder="Ingrese nombre de usuario" required>

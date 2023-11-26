@@ -21,7 +21,7 @@ $alcance='';
 
 if (isset($_SESSION['user_id'])) {
 	$id = $_SESSION['user_id'];
-	$sql = "select * from Pedido where id_pedido=(select max(id_pedido) AS id_Pedido from Pedido where id_clienteP='$id')";
+	$sql = "select * from Pedido where id_pedido=(select max(id_pedido) from Pedido where id_clienteP='$id');";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute();
 	$results = $stmt->fetch(PDO::FETCH_ASSOC);

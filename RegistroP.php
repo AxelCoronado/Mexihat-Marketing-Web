@@ -1,5 +1,5 @@
 <?php
-require_once 'databaseP.php';
+require ('Mexihat-Marketing-Web/databaseP.php');
 
 $nombre = '';
 $apellido = '';

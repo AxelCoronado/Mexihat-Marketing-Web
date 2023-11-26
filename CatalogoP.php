@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once 'databaseP.php';
-//unset($_SESSION['Nombre']);
 
 if(isset($_SESSION['user_id'])){
 	$query = "SELECT * FROM Modelo WHERE id_modelo = 'Mo003'";

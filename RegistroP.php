@@ -136,7 +136,7 @@ if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
 				<!--Botón-->
 				<center>
 				<!--<input name= "sum" type="submit" value="Registrarse"><br><br>-->
-				<button type="button" onclick="javascript:void(window.open('UsuarioP.php'));" title="">Registrarse</button><br><br></center>
+				<button type="button" onclick="javascript:void(window.open('LoginP.php'));" title="">Registrarse</button><br><br></center>
 			</form>
 		</div>
 	</body>    

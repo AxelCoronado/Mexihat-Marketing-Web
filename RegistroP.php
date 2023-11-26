@@ -45,6 +45,7 @@ if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
 		if ($stmt2->execute()) {
 			echo "<script>
 				alert('Usuario Creado Exitosamente');
+    				window.location= 'LoginP.php';
 			</script>";
 		} else {
 			echo "<script>javascript:alert('Error de creación, intentelo de nuevo.');</script>";
@@ -133,7 +134,9 @@ if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
 				<input name="telefono_C" type="text" placeholder="(ejem. 4771234567)" required>
 				<!--Botón-->
 				<center>
-				<button type="button" onclick="javascript:void(window.open('LoginP.php'));" title="">Registrarse</button><br><br></center>
+				<input name= "sum" type="submit" value="Registrarse"><br><br>
+				<!--<button type="button" onclick="javascript:void(window.open('LoginP.php'));" title="">Registrarse</button><br><br>-->
+				</center>
 			</form>
 		</div>
 	</body>    

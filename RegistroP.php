@@ -68,7 +68,7 @@ if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
 		<div class="login-box">
 			<img class="avatar" src="img/logos/logologin.png" alt="">
 			<h1>Registrarse ahora</h1>
-			<form action="RegistroP.php">
+			<form action="RegistroP.php" method="POST">
 				<!--USERNAME-->
 				<label for="username">Nombre de Usuario</label>
 				<input name="nombre_C" type="text" placeholder="Ingrese nombre de usuario" required>

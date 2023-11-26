@@ -59,7 +59,7 @@ if (isset($_SESSION['user_id'])) {
 	$cantidad=0;
 	$idp = 0;
 	$idpi = 0;
-	$sql3 = 'select max(id_pedido) AS id_Pedido from Pedido';
+	$sql3 = "SELECT MAX(id_pedido) FROM Pedido";
 	$stmt3 = $conn->prepare($sql3);
 	$stmt3->execute();
 	$results3 = $stmt3->fetch(PDO::FETCH_ASSOC);

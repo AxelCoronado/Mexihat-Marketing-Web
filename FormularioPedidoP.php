@@ -5,9 +5,9 @@ require_once 'databaseP.php';
 $mod = '';
 if(!empty($_GET['vari'])){
 	$_SESSION['mod']=$_GET['vari'];
-	$Mod = $_GET['vari'];
+	$mod = $_GET['vari'];
 }else{
-	$Mod=$_SESSION['mod'];
+	$mod=$_SESSION['mod'];
 }
 
 $id='';

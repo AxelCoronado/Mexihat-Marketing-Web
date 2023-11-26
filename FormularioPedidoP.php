@@ -30,7 +30,7 @@ $total=0;
 
 if (isset($_SESSION['user_id'])) {
 	$id = $_SESSION['user_id'];
-	$query = "SELECT * FROM Cliente WHERE id_cliente=$id";
+	$query = "SELECT * FROM Cliente WHERE id_cliente='$id'";
 	$query2 = "SELECT * FROM Modelo WHERE id_modelo = '$Mod'";
 	$stmt = $conn->prepare($query);
 	$stmt2 = $conn->prepare($query2);

@@ -136,7 +136,7 @@
             <div class="column column--33">
             <h2 class="column__title">Contactanos</h2>   
             <p class="column__txt">Telefono: 477 592 86 46</p>    
-            <p class="column__txt">argoteana3@gmail.com</p>    
+            <p class="column__txt">mexihatleon@gmail.com</p>    
             </div>
             <div class="column column--33">
             <h2 class="column__title">Siguenos en nuestras redes sociales</h2>

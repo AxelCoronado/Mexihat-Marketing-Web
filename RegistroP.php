@@ -1,5 +1,5 @@
 <?php
-require_once 'databaseP.php';
+require_once ('databaseP.php');
 
 $nombre = '';
 $apellido = '';
@@ -134,8 +134,7 @@ if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
 				<input name="telefono_C" type="text" placeholder="(ejem. 4771234567)" required>
 				<!--Botón-->
 				<center>
-				<input name= "sum" type="submit" value="Registrarse"><br><br>
-				<!--<button type="button" onclick="javascript:void(window.open('UsuarioP.php'));" title="">Registrarse</button><br><br></center>-->
+				<button type="button" onclick="javascript:void(window.open('UsuarioP.php'));" title="">Registrarse</button></center>
 			</form>
 		</div>
 	</body>    

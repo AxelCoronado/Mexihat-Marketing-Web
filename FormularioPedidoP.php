@@ -81,7 +81,7 @@ if (isset($_SESSION['user_id'])) {
 		if ($stmt4->execute()) {
 			echo "<script>
 				alert('Pedido Realizado');
-				window.location= 'CatalogoP.php';
+				window.location= "/Mexihat-Marketing-Web/CatalogoP.php";
 			</script>";
 		} else {
 			echo "<script>javascript:alert('Error de creación, intentelo de nuevo.');</script>";
@@ -102,7 +102,7 @@ if (isset($_SESSION['user_id'])) {
 		<div class="login-box">
 			<img class="avatar" src="img/logos/pedido.jpg" alt="">
 			<h1>Mi pedido</h1>
-			<form action = "FormularioPedidoP.php">
+			<form action = "FormularioPedidoP.php" method="POST">
 				<!--USERNAME-->
 				<label for="username">Nombre</label>
 				<input type="text" value="<?php echo $nombre." ".$apellido; ?>" placeholder="Ingrese su nombre">
@@ -111,10 +111,10 @@ if (isset($_SESSION['user_id'])) {
 				<input type="text" value="<?php echo $correo; ?>" placeholder="Ingrese su correo">
 				<!--Serie Modelos-->
 				<label for="serie">Serie Modelo</label>
-				<input type="text" value="<?php echo $mod; ?>" placeholder="">
+				<input type="text" value="<?php echo $mod; ?>">
 				<!--Modelos-->
 				<label for="modelo">Modelo</label>
-				<input type="text" value="<?php echo $nomMode; ?>" placeholder="">
+				<input type="text" value="<?php echo $nomMode; ?>">
 				<!--Cantidad-->
 				<label for="cantidad">Cantidad</label><br>
 				<select name="cantidadPro_P" id="cantidad">

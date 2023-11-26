@@ -1,5 +1,5 @@
 <?php
-require 'databaseP.php';
+require_once 'databaseP.php';
 
 $nombre = '';
 $apellido = '';
@@ -45,7 +45,7 @@ if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
 		if ($stmt2->execute()) {
 			echo "<script>
 				alert('Usuario Creado Exitosamente');
-				window.location= 'LoginP.php'
+				window.location= 'LoginP.php';
 			</script>";
 		} else {
 			echo "<script>javascript:alert('Error de creación, intentelo de nuevo.');</script>";

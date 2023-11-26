@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'databaseP.php';
+require_once 'databaseP.php';
 
 $nombre='';
 $apellido='';
@@ -18,11 +18,6 @@ $cant='';
 $fecha='';
 $total=0;
 $alcance='';
-
-/*$sql = "select * from Pedido where id_pedido=(select max(id_pedido) AS id_Pedido from Pedido where id_clienteP='$id')";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
-$results = $stmt->fetch(PDO::FETCH_ASSOC);*/
 
 if (isset($_SESSION['user_id'])) {
 	$id = $_SESSION['user_id'];
@@ -231,7 +226,7 @@ if (isset($_SESSION['user_id'])) {
             <div class="column column--33">
             <h2 class="column__title">Contactanos</h2>   
             <p class="column__txt">Telefono: 477 592 86 46</p>    
-            <p class="column__txt">argoteana3@gmail.com</p>    
+            <p class="column__txt">mexihatleon@gmail.com</p>    
             </div>
             <div class="column column--33">
             <h2 class="column__title">Siguenos en nuestras redes sociales</h2>

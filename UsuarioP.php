@@ -19,11 +19,6 @@ $fecha='';
 $total=0;
 $alcance='';
 
-/*$sql = "select * from Pedido where id_pedido=(select max(id_pedido) AS id_Pedido from Pedido where id_clienteP='$id')";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
-$results = $stmt->fetch(PDO::FETCH_ASSOC);*/
-
 if (isset($_SESSION['user_id'])) {
 	$id = $_SESSION['user_id'];
 	$sql = "select * from Pedido where id_pedido=(select max(id_pedido) AS id_Pedido from Pedido where id_clienteP='$id')";
@@ -165,9 +160,6 @@ if (isset($_SESSION['user_id'])) {
                             <!--Estado-->
                             <label for="estado">Estado</label>
                             <input name="estado" type="text" value="<?php echo $estado; ?>" placeholder="">
-                            <!--Municipio
-                            <label for="municipio">Municipio</label>
-                            <input name="municipio" type="text"  placeholder="">-->
                             <!--calle-->
                             <label for="calle">Calle</label>
                             <input name="calle" type="text" value="<?php echo $calle; ?>" placeholder="">
@@ -185,7 +177,7 @@ if (isset($_SESSION['user_id'])) {
                             <input name="tel" type="text" value="<?php echo $tel; ?>" placeholder="">
                             <!--Botón
                             <input type="submit" value="Guardar cambios">-->
-							<a href='logoutP.php'> Cerrar Sesión </a>
+			    <a href='logoutP.php'> Cerrar Sesión </a>
                         </form>
                     </div></center>
             </div>
@@ -231,7 +223,7 @@ if (isset($_SESSION['user_id'])) {
             <div class="column column--33">
             <h2 class="column__title">Contactanos</h2>   
             <p class="column__txt">Telefono: 477 592 86 46</p>    
-            <p class="column__txt">argoteana3@gmail.com</p>    
+            <p class="column__txt">mexihatleon@gmail.com</p>    
             </div>
             <div class="column column--33">
             <h2 class="column__title">Siguenos en nuestras redes sociales</h2>

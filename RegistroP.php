@@ -126,7 +126,7 @@ if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
 				<input name="telefono_C" type="text" placeholder="(ejem. 4771234567)" required>
 				<!--Botón-->
 				<center>
-				<button type="button" onclick="javascript:void(window.open('UsuarioP.php'));" title="">Registrarse</button></center>
+				<button type="button" onclick="javascript:void(window.open('LoginP.php'));" title="">Registrarse</button></center>
 			</form>
 		</div>
 	</body>    

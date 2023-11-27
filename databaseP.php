@@ -1,6 +1,6 @@
 <?php
 
-$server = 'localhost:3306';
+$server = '192.168.100.107:3306';
 $username = 'adminMexihat';
 $password = 'admin123';
 $database = 'Mexihat';

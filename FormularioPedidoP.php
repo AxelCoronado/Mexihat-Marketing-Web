@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'databaseP.php';
+require 'databaseP.php';
 
 $mod = '';
 if(!empty($_GET['vari'])){

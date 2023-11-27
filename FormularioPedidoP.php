@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once ('databaseP.php');
+require_once 'databaseP.php';
 
 $Mod = '';
 if(!empty($_GET['vari'])){
@@ -31,7 +31,7 @@ $total=0;
 
 if (isset($_SESSION['user_id'])) {
 	$id = $_SESSION['user_id'];
-	$query = "SELECT * FROM Cliente WHERE id_cliente='$id';";
+	$query = "SELECT * FROM Cliente WHERE id_cliente=$id;";
 	$query2 = "SELECT * FROM Modelo WHERE id_modelo = '$Mod';";
 	$stmt = $conn->prepare($query);
 	$stmt2 = $conn->prepare($query2);
@@ -81,7 +81,7 @@ if (isset($_SESSION['user_id'])) {
 		if ($stmt4->execute()) {
 			echo "<script>
 				alert('Pedido Realizado');
-				window.location= 'CatalogoP.php';
+				window.location= "CatalogoP.php";
 			</script>";
 		} else {
 			echo "<script>javascript:alert('Error de creación, intentelo de nuevo.');</script>";
@@ -102,7 +102,7 @@ if (isset($_SESSION['user_id'])) {
 		<div class="login-box">
 			<img class="avatar" src="img/logos/pedido.jpg" alt="">
 			<h1>Mi pedido</h1>
-			<form action = "FormularioPedidoP.php" method="POST">
+			<form action = "FormularioPedidoP.php" Method="POST">
 				<!--USERNAME-->
 				<label for="username">Nombre</label>
 				<input type="text" value="<?php echo $nombre." ".$apellido; ?>" placeholder="Ingrese su nombre">

@@ -60,7 +60,7 @@ if (isset($_SESSION['user_id'])) {
 	$cantidad=0;
 	$idp = 0;
 	$idpi = 0;
-	$sql3 = "SELECT MAX(id_pedido) FROM 'Pedido'";
+	$sql3 = "SELECT MAX(id_pedido) FROM Pedido";
 	$stmt3 = $conn->prepare($sql3);
 	$stmt3->execute();
 	$results3 = $stmt3->fetch(PDO::FETCH_ASSOC);
@@ -76,7 +76,7 @@ if (isset($_SESSION['user_id'])) {
 	
 		$cantidad=$_POST['cantidadPro_P'];
 		$envio=$_POST['envio'];
-		$sql4 = 'INSERT INTO Pedido (id_pedido, id_clienteP, id_modeloP, fecha_P, cantidadPro_P, total, alcance_P) VALUES ($idpi, '$id', '$Mod', '$fecha', '$cantidad', '$total', '$envio')';
+		$sql4 = "INSERT INTO Pedido (id_pedido, id_clienteP, id_modeloP, fecha_P, cantidadPro_P, total, alcance_P) VALUES ($idpi, '$id', '$Mod', '$fecha', '$cantidad', '$total', '$envio')";
 		$stmt4 = $conn->prepare($sql4);
 		if ($stmt4->execute()) {
 			echo "<script>
@@ -89,7 +89,6 @@ if (isset($_SESSION['user_id'])) {
 	}
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -103,19 +102,19 @@ if (isset($_SESSION['user_id'])) {
 			<img class="avatar" src="img/logos/pedido.jpg" alt="">
 			<h1>Mi pedido</h1>
 			<form action = "FormularioPedidoP.php" Method="POST">
-				<!--USERNAME-->
+
 				<label for="username">Nombre</label>
 				<input type="text" value="<?php echo $nombre." ".$apellido; ?>" placeholder="Ingrese su nombre">
-				<!--Correo-->
+
 				<label for="correo">Correo</label>
 				<input type="text" value="<?php echo $correo; ?>" placeholder="Ingrese su correo">
-				<!--Serie Modelos-->
+
 				<label for="serie">Serie Modelo</label>
 				<input type="text" value="<?php echo $Mod; ?>" placeholder="">
-				<!--Modelos-->
+
 				<label for="modelo">Modelo</label>
 				<input type="text" value="<?php echo $nomMode; ?>" placeholder="">
-				<!--Cantidad-->
+
 				<label for="cantidad">Cantidad</label><br>
 				<select name="cantidadPro_P" id="cantidad">
 					<option value=1>1</option>
@@ -129,36 +128,36 @@ if (isset($_SESSION['user_id'])) {
 					<option value=9>9</option>
 					<option value=10>10</option>
 				</select><br>
-				<!--Sexo-->
+
 				<label for="envio"><br>Envío</label><br>
 				<input type="radio" name="envio" value="León">León Gto
 				<input type="radio" name="envio" value="Nacional">Nacional
 				<input type="radio" name="envio" value="Internacional">Internacional
-				<!--Fecha-->
+
 				<label for="fecha">Fecha del Pedido</label>
 				<input type="text" value="<?php echo $fecha; ?>" placeholder="">
-				<!--País-->
+
 				<label for="pais">País</label>
 				<input type="text" value="<?php echo $pais; ?>" placeholder="Ingrese nombre del país">
-				<!--Estado-->
+
 				<label for="estado">Estado</label>
 				<input type="text" value="<?php echo $estado; ?>" placeholder="Ingrese nombre del estado">
-				<!--calle-->
+
 				<label for="calle">Calle</label>
 				<input type="text" value="<?php echo $calle; ?>" placeholder="Ingrese nombre de la calle">
-				<!--colonia-->
+
 				<label for="colonia">Colonia</label>
 				<input type="text" value="<?php echo $colonia; ?>" placeholder="Ingrese nombre de la colonia">
-				<!--numero-->
+
 				<label for="numero">Núm</label>
 				<input type="text" value="<?php echo $numCasa; ?>" placeholder="Ingrese número de casa">
-				<!--cp-->
+
 				<label for="cp">Código Postal</label>
 				<input type="text" value="<?php echo $codigo; ?>" placeholder="Ingrese código postal">
-				<!--telefono-->
+
 				<label for="telefono">Teléfono</label>
 				<input type="text" value="<?php echo $tel; ?>" placeholder="(ejem. 4771234567)">
-				<!--Botón-->
+
 				<input name= "sum" type="submit" value="Confirmar Pedido"><br><br>
 			</form>
 		</div>

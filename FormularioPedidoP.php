@@ -76,7 +76,7 @@ if (isset($_SESSION['user_id'])) {
 	
 		$cantidad=$_POST['cantidadPro_P'];
 		$envio=$_POST['envio'];
-		$sql4 = "INSERT INTO Pedido (id_pedido, id_clienteP, id_modeloP, fecha_P, cantidadPro_P, total, alcance_P) VALUES ($idpi, '$id', '$mod', '$fecha', $cantidad, $total, '$envio')";
+		$sql4 = "INSERT INTO Pedido (id_pedido, id_clienteP, id_modeloP, fecha_P, cantidadPro_P, total, alcance_P) VALUES ('$idpi', '$id', '$mod', '$fecha', $cantidad, $total, '$envio')";
 		$stmt4 = $conn->prepare($sql4);
 		if ($stmt4->execute()) {
 			echo "<script>

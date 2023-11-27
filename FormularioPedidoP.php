@@ -60,7 +60,7 @@ if (isset($_SESSION['user_id'])) {
 	$cantidad=0;
 	$idp = 0;
 	$idpi = 0;
-	$sql3 = 'select max(id_pedido) AS id_Pedido from Pedido';
+	$sql3 = "SELECT MAX(id_pedido) FROM Pedido;";
 	$stmt3 = $conn->prepare($sql3);
 	$stmt3->execute();
 	$results3 = $stmt3->fetch(PDO::FETCH_ASSOC);
@@ -76,7 +76,7 @@ if (isset($_SESSION['user_id'])) {
 	
 		$cantidad=$_POST['cantidadPro_P'];
 		$envio=$_POST['envio'];
-		$sql4 = "Insert into Pedido (id_pedido, id_clienteP, id_modeloP, fecha_P, cantidadPro_P, total, alcance_P) values ($idpi, '$id', '$Mod', '$fecha', '$cantidad', '$total', '$envio');";
+		$sql4 = "INSERT INTO Pedido (id_pedido, id_clienteP, id_modeloP, fecha_P, cantidadPro_P, total, alcance_P) VALUES ($idpi, '$id', '$Mod', '$fecha', '$cantidad', '$total', '$envio');";
 		$stmt4 = $conn->prepare($sql4);
 		if ($stmt4->execute()) {
 			echo "<script>

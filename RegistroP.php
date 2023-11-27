@@ -1,5 +1,8 @@
 <?php
-require_once 'databaseP.php';
+require ('databaseP.php');
+echo "<script>
+	alert('No conectó con la BD');
+</script>";
 
 $nombre = '';
 $apellido = '';

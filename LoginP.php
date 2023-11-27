@@ -7,7 +7,7 @@ if(isset($_SESSION['user_id'])){
 }
 
 if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
-	$records = $conn->prepare('SELECT id_cliente, nombre_C, contra_C FROM Cliente WHERE nombre_C = :nombre_C');
+	$records = $conn->prepare("SELECT id_cliente, nombre_C, contra_C FROM Cliente WHERE nombre_C = :nombre_C;");
 	$records->bindParam(':nombre_C', $_POST['nombre_C']);
 	$records->execute();
 	$results = $records->fetch(PDO::FETCH_ASSOC);

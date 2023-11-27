@@ -80,11 +80,13 @@ if (isset($_SESSION['user_id'])) {
 		$stmt4 = $conn->prepare($sql4);
 		if ($stmt4->execute()) {
 			echo "<script>
-				alert("Pedido Realizado");
-				window.location= "CatalogoP.php";
+				alert('Pedido Realizado');
+				window.location= 'CatalogoP.php';
 			</script>";
 		} else {
-			echo "<script>alert("Error de creación, intentelo de nuevo.");</script>";
+			echo "<script>
+   				alert('Error de creación, intentelo de nuevo.');
+       			</script>";
 		}
 	}
 }

@@ -23,6 +23,7 @@ $stmt->execute();
 $results = $stmt->fetch(PDO::FETCH_ASSOC);
 $idc = intval($results['id_Cliente']);
 $idci = $idc + 1;
+$idci.toString();
 
 if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
 	$nombre=$_POST['nombre_C'];
@@ -38,7 +39,7 @@ if (!empty($_POST['nombre_C']) && !empty($_POST['contra_C'])) {
 	$numcasa=$_POST['numCasa_C'];
 	$cp=$_POST['CP_C'];
 	$tel=$_POST['telefono_C'];
-	$sql = "INSERT INTO Cliente (id_cliente, nombre_C, apellidos_C, correo_C, contra_C, edad_C, sexo_C, pais_C, estado_C, calle_C, colonia_C, numCasa_C, CP_C, telefono_C) VALUES ($idci, '$nombre', '$apellido', '$correo', '$contra', $edad, '$sexo', '$pais', '$estado', '$calle', '$colonia', $numcasa, $cp, '$tel');";
+	$sql = "INSERT INTO Cliente (id_cliente, nombre_C, apellidos_C, correo_C, contra_C, edad_C, sexo_C, pais_C, estado_C, calle_C, colonia_C, numCasa_C, CP_C, telefono_C) VALUES ('$idci', '$nombre', '$apellido', '$correo', '$contra', $edad, '$sexo', '$pais', '$estado', '$calle', '$colonia', $numcasa, $cp, '$tel');";
 	$stmt2 = $conn->prepare($sql);
 	
 	if($_POST['contra_C']==$_POST['confirmPass']){

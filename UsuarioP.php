@@ -21,12 +21,12 @@ $alcance='';
 
 if (isset($_SESSION['user_id'])) {
 	$id = $_SESSION['user_id'];
-	$sql = "select * from Pedido where id_pedido=(select max(id_pedido) AS id_Pedido from Pedido where id_clienteP='$id')";
+	$sql = "SELECT * FROM Pedido WHERE id_pedido=(SELECT MAX(id_pedido) FROM Pedido WHERE id_clienteP='$id');";
 	$stmt = $conn->prepare($sql);
 	$stmt->execute();
 	$results = $stmt->fetch(PDO::FETCH_ASSOC);
-	$query = "SELECT * FROM Cliente WHERE id_cliente=$id";
-	$query2 = "SELECT * FROM Cliente JOIN Pedido on id_clienteP = id_cliente WHERE id_cliente='$id'";
+	$query = "SELECT * FROM Cliente WHERE id_cliente='$id';";
+	$query2 = "SELECT * FROM Cliente JOIN Pedido ON id_clienteP = id_cliente WHERE id_cliente='$id';";
 	$stmt = $conn->prepare($query);
 	$stmt2 = $conn->prepare($query2);
 	$stmt->execute();
